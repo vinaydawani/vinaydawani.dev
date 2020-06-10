@@ -1,0 +1,34 @@
+$bg-color: #333;
+$white-text: #f2f2f2;
+
+$helvetica: 'Helvetica',
+sans-serif;
+$montserrat: 'Montserrat',
+sans-serif;
+
+#menu-bar {
+    background-color: $bg-color;
+    overflow: hidden;
+    font-family: $helvetica;
+
+    a {
+        color: $white-text;
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 1.1em;
+    }
+
+    a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .active {
+        color: black;
+        background-color: #ddd;
+    }
+}
+
+body {
+    background-color: $bg-color;
+}
