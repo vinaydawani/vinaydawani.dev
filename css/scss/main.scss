@@ -48,10 +48,12 @@ body {
         a {
             font-family: $helvetica;
             color: $white-text;
+            padding-left: 10px;
+            padding-right: 10px;
         }
 
         a:hover {
-            color: black;
+            color: #7f7f7f;
         }
 
         a.active {
