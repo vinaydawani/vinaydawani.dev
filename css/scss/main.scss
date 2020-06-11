@@ -1,38 +1,63 @@
 $bg-color: #333;
 $white-text: #f2f2f2;
 
-$helvetica: 'Helvetica',
+$helvetica: "Helvetica",
 sans-serif;
-$montserrat: 'Montserrat',
+$montserrat: "Montserrat",
 sans-serif;
 
-#menu-bar {
-    background-color: $bg-color;
-    overflow: hidden;
-    font-family: $helvetica;
+// #menu-bar {
+//     background-color: $bg-color;
+//     overflow: hidden;
+//     font-family: $helvetica;
 
-    a {
-        color: $white-text;
-        text-align: center;
-        padding: 8px 12px;
-        font-size: 1.1em;
-    }
+//     a {
+//         color: $white-text;
+//         text-align: center;
+//         padding: 8px 12px;
+//         font-size: 1.1em;
+//     }
 
-    a:hover {
-        background-color: #ddd;
-        color: black;
-    }
+//     a:hover {
+//         color: black;
+//         border-radius: 0.25em;
+//     }
 
-    .active {
-        color: black;
-        background-color: #ddd;
-    }
-}
+//     .active {
+//         color: black;
+//         background-color: #ddd;
+//         border-radius: 0.25em;
+//         margin: 0 0.25em;
+//     }
+// }
 
 body {
     background-color: $bg-color;
 }
 
-.navbar {
-    background: $bg-color;
+// .navbar {
+//     background: #383838;
+//     font-family: $helvetica;
+// }
+
+#boot-menu {
+    background: #383838;
+    font-family: $helvetica;
+
+    .navbar-nav {
+        a {
+            font-family: $helvetica;
+            color: $white-text;
+        }
+
+        a:hover {
+            color: black;
+        }
+
+        a.active {
+            color: black;
+            background-color: #ddd;
+            border-radius: 0.25em;
+        }
+    }
 }
