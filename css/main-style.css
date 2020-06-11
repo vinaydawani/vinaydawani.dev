@@ -36,6 +36,12 @@ body {
   }
 }
 
+.bout, .container .desc {
+  font-size: 3rem;
+  font-style: italic;
+  font-family: monospace;
+}
+
 .container .name {
   color: #f2f2f2;
   font-size: 6rem;
@@ -45,9 +51,6 @@ body {
 }
 .container .desc {
   color: #a8000d;
-  font-size: 3rem;
-  font-style: italic;
-  font-family: monospace;
 }
 @media screen and (max-width: 576px) {
   .container .name {
@@ -56,6 +59,11 @@ body {
   .container .desc {
     font-size: 1.5rem;
   }
+}
+
+.bout {
+  color: #f2f2f2;
+  font-family: "DM Mono", monospace;
 }
 
 /*# sourceMappingURL=main-style.css.map */
