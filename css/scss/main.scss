@@ -95,9 +95,42 @@ body {
 
     p {
         @extend %para;
+        text-align: left;
 
         span {
             color: #a8000d;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        p {
+            font-size: 1.8rem;
+            line-height: 1.4;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        img {
+            margin-top: 20%;
+        }
+
+        p {
+            font-size: 1.6rem;
+            line-height: 1.4;
+            text-align: center;
+        }
+    }
+
+    @media screen and (max-height: 678px) {
+        img {
+            width: 75%;
+            height: auto;
+            margin: 10%;
+            margin-top: 20%;
+        }
+
+        p {
+            font-size: 1.4rem;
         }
     }
 }
