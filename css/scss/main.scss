@@ -57,8 +57,9 @@ body {
 
 %para {
     font-size: 3rem;
+    color: $white-text;
     font-style: italic;
-    font-family: monospace;
+    font-family: $mono;
 }
 
 .container {
@@ -86,10 +87,19 @@ body {
     }
 }
 
-.bout {
-    @extend %para;
-    color: $white-text;
-    font-family: $mono;
+#me {
+    img {
+        filter: grayscale(100%);
+        border: 5px solid white;
+    }
+
+    p {
+        @extend %para;
+
+        span {
+            color: #a8000d;
+        }
+    }
 }
 
 // align-items-center justify-content-center
