@@ -135,4 +135,30 @@ body {
     }
 }
 
+#tabular {
+    overflow-x: auto;
+    font-family: $helvetica;
+    font-weight: 200;
+
+    table {
+        color: $white-text;
+        font-size: 2rem;
+
+        th,
+        td {
+            border-bottom: .5px solid $white-text;
+            font-size: 1.5rem;
+        }
+
+        td {
+            text-align: center;
+        }
+    }
+
+    p {
+        @extend %para;
+        font-size: 1rem;
+    }
+}
+
 // align-items-center justify-content-center
