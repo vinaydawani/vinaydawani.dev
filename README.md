@@ -4,8 +4,6 @@ A very basic website which fulfils all the requirements of the project. This web
 
 ## HTML Pages-
 
----
-
 ### 1. welcome.html
 
 - This page is a basic welcome page which introduces me. It only has 2 line but more can be added with a little tweaking.
@@ -25,13 +23,9 @@ A very basic website which fulfils all the requirements of the project. This web
 
 ## CSS/SCSS-
 
----
-
 Exclusively SCSS was coded for the project which was then converted to `css/main-style.css` by command-line.
 
 ## Notes-
-
----
 
 - The website is fully responsive and can be viewed on great number of devices without many complications.
 - The website leverages bootstrap 4 completely.
