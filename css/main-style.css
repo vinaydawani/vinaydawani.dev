@@ -5,30 +5,86 @@ body {
 }
 
 body {
-  background-color: #333;
+  background: #141E30;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #243B55, #141E30);
+  ackground: linear-gradient(to right, #243B55, #141E30);
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   line-height: 1.2;
 }
 
+.btn {
+  padding: 12px 26px;
+}
+
+.btn-rounded {
+  border-radius: 30px;
+}
+
+.btn-outline-custom {
+  background-color: transparent;
+  border: 2px solid #f2f2f2;
+  color: #f2f2f2;
+  letter-spacing: 1px;
+  transition: all 0.5s;
+  font-size: 15px;
+}
+
+.btn-outline-custom.active,
+.btn-outline-custom:active,
+.btn-outline-custom:hover {
+  background-color: #f2f2f2 !important;
+  border-color: #f2f2f2 !important;
+  color: #000 !important;
+}
+
 #boot-menu {
-  background: #383838;
+  background-color: transparent;
   font-family: "Helvetica", sans-serif;
   font-size: 1.8rem;
 }
 #boot-menu .navbar-nav a {
+  position: relative;
   font-family: "Helvetica", sans-serif;
   color: #f2f2f2;
+  text-decoration: none;
   padding-left: 15px;
   padding-right: 15px;
 }
-#boot-menu .navbar-nav a:hover {
-  color: #7f7f7f;
+#boot-menu .navbar-nav .underline:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  width: 0;
+  bottom: -5px;
+  background: #000;
+  background: #ff00dd;
+  background: linear-gradient(90deg, #ff00dd 0%, #c660bb 37%, #00d4ff 100%);
+  height: 4px;
+  transition-property: width;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
 }
-#boot-menu .navbar-nav a.active {
-  color: black;
-  background-color: #ddd;
-  border-radius: 0.25em;
+#boot-menu .navbar-nav .underline:hover:after,
+#boot-menu .navbar-nav .underline:focus:after,
+#boot-menu .navbar-nav .underline:active:after {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+#boot-menu .navbar-nav .active {
+  background: linear-gradient(90deg, #00d4ff 0%, #c660bb 70%, #ff00dd 100%);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+#boot-menu .navbar-nav li {
+  margin: 0 2px;
 }
 @media screen and (max-width: 576px) {
   #boot-menu {
@@ -47,46 +103,20 @@ body {
   color: #f2f2f2;
   font-size: 6rem;
   font-style: normal;
-  font-weight: lighter;
+  font-weight: 400;
   font-family: "Montserrat", sans-serif;
 }
 .container .desc {
+  font-weight: 200;
   color: #a8000d;
 }
 .container #typing {
-  font-weight: bolder !important;
+  font-weight: 600 !important;
   font-family: "Montserrat", sans-serif;
 }
 .container .header_btn {
   margin: auto;
   width: 50%;
-}
-.container .btn {
-  padding: 12px 26px;
-}
-.container .btn-rounded {
-  border-radius: 30px;
-}
-.container .btn-outline-custom {
-  background-color: transparent;
-  border: 2px solid #f2f2f2;
-  color: #f2f2f2;
-  letter-spacing: 1px;
-  transition: all 0.5s;
-  font-size: 15px;
-}
-.container .btn-outline-custom:hover,
-.container .btn-outline-custom:focus,
-.container .btn-outline-custom:active,
-.container .btn-outline-custom.active,
-.container .btn-outline-custom.focus,
-.container .btn-outline-custom:active,
-.container .btn-outline-custom:focus,
-.container .btn-outline-custom:hover,
-.container .open > .dropdown-toggle.btn-outline-custom {
-  background-color: #f2f2f2 !important;
-  border-color: #f2f2f2 !important;
-  color: #000 !important;
 }
 @media screen and (max-width: 576px) {
   .container .name {
@@ -95,6 +125,15 @@ body {
   .container .desc {
     font-size: 1.5rem;
   }
+}
+
+.particle-bg {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  opacity: 60%;
 }
 
 #me img {

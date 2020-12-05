@@ -14,8 +14,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="node_modules/typed.js/lib/typed.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@600&family=Montserrat&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;0,800;1,100&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/main-style.css" />
@@ -32,16 +33,16 @@
       <div class="collapse navbar-collapse w-100" id="collapsibleNavbar">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="welcome.html">Home</a>
+            <a class="nav-link active underline" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About Me</a>
+            <a class="nav-link underline" href="about.html">About Me</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="fav.html">Favorites</a>
+            <a class="nav-link underline" href="fav.html">Favorites</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link underline" href="contact.html">Contact</a>
           </li>
         </ul>
       </div>
@@ -52,23 +53,14 @@
         <div class="col-md-12 my-auto">
           <h4 class="mw-100 text-center desc">Hello & Welcome</h4>
           <h1 class="mw-100 text-center name mt-3">I am <span id="typing"></span></h1>
-          <script>
-            var typed = new Typed("#typing", {
-              strings: ["Vinay Dawani.", "A Designer.", "A thinker.", "A Rider", "Provider."],
-              typeSpeed: 80,
-              startDelay: 1000,
-              backSpeed: 80,
-              backDelay: 500,
-              loop: true,
-              smartBackspace: false,
-            });
-          </script>
-          <!-- <p class="mw-100 text-center desc">I make stuff</p> -->
           <div class="header_btn text-center">
             <a href="#" class="btn btn-outline-custom btn-rounded mt-5">Download CV</a>
           </div>
         </div>
       </div>
     </div>
+    <canvas class="particle-bg"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+    <script src="js/main.js" type="text/javascript"></script>
   </body>
 </html>

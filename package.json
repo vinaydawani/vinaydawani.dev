@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/vinaydawani/project0#readme",
   "dependencies": {
+    "particle.js": "^1.0.7",
     "typed.js": "^2.0.11"
   }
 }
