@@ -1,0 +1,22 @@
+{
+  "name": "project0",
+  "version": "1.0.0",
+  "description": "A very basic website which fulfils all the requirements of the project. This website is a dummy website which doesn't have my real information except for my picture.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinaydawani/project0.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinaydawani/project0/issues"
+  },
+  "homepage": "https://github.com/vinaydawani/project0#readme",
+  "dependencies": {
+    "typed.js": "^2.0.11"
+  }
+}

@@ -13,6 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="node_modules/typed.js/lib/typed.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@600&family=Montserrat&display=swap"
       rel="stylesheet"
@@ -49,8 +50,23 @@
     <div class="container h-100">
       <div class="row h-100">
         <div class="col-md-12 my-auto">
-          <h1 class="mw-100 text-center name">Hey I am Skimpy</h1>
-          <p class="mw-100 text-center desc">I make stuff</p>
+          <h4 class="mw-100 text-center desc">Hello & Welcome</h4>
+          <h1 class="mw-100 text-center name mt-3">I am <span id="typing"></span></h1>
+          <script>
+            var typed = new Typed("#typing", {
+              strings: ["Vinay Dawani.", "A Designer.", "A thinker.", "A Rider", "Provider."],
+              typeSpeed: 80,
+              startDelay: 1000,
+              backSpeed: 80,
+              backDelay: 500,
+              loop: true,
+              smartBackspace: false,
+            });
+          </script>
+          <!-- <p class="mw-100 text-center desc">I make stuff</p> -->
+          <div class="header_btn text-center">
+            <a href="#" class="btn btn-outline-custom btn-rounded mt-5">Download CV</a>
+          </div>
         </div>
       </div>
     </div>

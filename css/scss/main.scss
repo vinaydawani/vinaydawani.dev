@@ -67,13 +67,54 @@ body {
         color: $white-text;
         font-size: 6rem;
         font-style: normal;
-        font-weight: 700;
+        font-weight: lighter;
         font-family: $montserrat;
     }
 
     .desc {
         @extend %para;
         color: #a8000d;
+    }
+
+    #typing {
+        font-weight: bolder !important;
+        font-family: $montserrat;
+    }
+
+    .header_btn {
+        margin: auto;
+        width: 50%;
+    }
+
+    .btn {
+        padding: 12px 26px;
+    }
+    
+    .btn-rounded {
+        border-radius: 30px;
+    }
+    
+    .btn-outline-custom {
+        background-color: transparent;
+        border: 2px solid $white-text;
+        color: $white-text;
+        letter-spacing: 1px;
+        transition: all 0.5s;
+        font-size: 15px;
+    }
+
+    .btn-outline-custom:hover,
+    .btn-outline-custom:focus,
+    .btn-outline-custom:active,
+    .btn-outline-custom.active,
+    .btn-outline-custom.focus,
+    .btn-outline-custom:active,
+    .btn-outline-custom:focus,
+    .btn-outline-custom:hover,
+    .open>.dropdown-toggle.btn-outline-custom {
+        background-color: $white-text !important;
+        border-color: $white-text !important;
+        color: #000 !important;
     }
 
     @media screen and (max-width: 576px) {
