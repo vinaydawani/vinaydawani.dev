@@ -13,11 +13,11 @@ menuButton.addEventListener("click", () => {
 
 var md = window.matchMedia("(max-width: 768px)");
 
-md.addEventListener("change", (e) => {
+function addClass(match) {
     let btnRow = document.querySelector('div.linkz');
     let btnList = btnRow.querySelectorAll('div');
 
-    if (e.matches) {
+    if (match) {
         for (let i = 0; i < btnList.length; i++) {
             btnList[i].classList.add('col-12');
         }    
@@ -26,19 +26,13 @@ md.addEventListener("change", (e) => {
             btnList[i].classList.remove('col-12');
         }  
     }
+}
+
+md.addEventListener("change", (e) => addClass(e.matches));
+
+window.addEventListener("load", () => {
+    const md = window.matchMedia("(max-width: 768px)");
+
+    md.addEventListener("change", e => addClass(e.matches));
+    addClass(md.matches);
 })
-
-// md.addListener(toggleButtons);
-
-// function toggleButtons(e) {
-//     if (e.matches) {
-//         let btnRow = document.querySelector('div.linkz');
-//         let btnList = btnRow.querySelectorAll('div')
-        
-//         for (let i = 0; i < btnList.length; i++) {
-//             btnList[i].classList.add('col-12');
-//         }    
-//     }
-// }
-
-// toggleButtons(md);
