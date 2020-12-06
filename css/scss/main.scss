@@ -177,6 +177,39 @@ body {
     }
 }
 
+.popover {
+    width: 75px;
+    text-align: center;
+    font-family: $mono;
+}
+
+#ball {
+    display: flex;
+    justify-content: center;
+    width: 8%;
+    height: 14%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    .inner {
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        background-color: $white-text;
+        box-shadow: 0 0 15px 5px $white-text;
+        animation: bounce 0.5s;
+        animation-direction: alternate;
+        animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes bounce {
+        from { transform: translate3d(0, 0, 0);     }
+        to   { transform: translate3d(0, 11em, 0); }
+    }
+}
+
 .particle-bg {
     position: absolute;
     display: block;
@@ -187,9 +220,14 @@ body {
 }
 
 #me {
+    margin: 0;
+    padding: 0;
+
     img {
         filter: grayscale(100%);
-        border: 5px solid white;
+        // border: 5px solid white;
+        height: 100vh;
+        width: auto;
     }
 
     p {
