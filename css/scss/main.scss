@@ -15,7 +15,7 @@ monospace;
 
     background: #141E30;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #243B55, #141E30);
-    ackground: linear-gradient(to right, #243B55, #141E30);
+    background: linear-gradient(to right, #243B55, #141E30);
 
     // background: #000000;  /* fallback for old browsers */
     // background: -webkit-linear-gradient(to right, #434343, #000000);  
@@ -65,7 +65,7 @@ body {
     color: $white-text;
     letter-spacing: 1px;
     transition: all 0.5s;
-    font-size: 15px;
+    font-size: 1.5rem;
 }
 
 .btn-outline-custom.active,
@@ -153,6 +153,7 @@ body {
     }
 
     @media screen and (max-width: 576px) {
+        // @include bg-grad();
         font-size: 1.2rem;
     }
 }
@@ -191,11 +192,15 @@ body {
 
     @media screen and (max-width: 576px) {
         .name {
-            font-size: 3rem;
+            font-size: 4rem;
         }
 
         .desc {
-            font-size: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .btn-outline-custom {
+            font-size: 1.4rem;
         }
     }
 }
@@ -454,6 +459,48 @@ body {
 
         i {
             transform: rotate(360deg);
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        h1 {
+            font-size: 4.5rem;
+        }
+
+        .contact-link {
+            font-size: 2.25rem;
+            padding: 0;
+        }
+
+        .linkz {
+            height: 15%;
+        }
+
+        .spacer {
+            padding-top: 8%;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        h1 {
+            font-size: 3rem;
+        }
+
+        .contact-link {
+            font-size: 1.5rem;
+            padding: 0;
+        }
+
+        .linkz {
+            height: 15%;
+        }
+
+        .spacer {
+            padding-top: 8%;
+        }
+
+        #social-btns {
+            display: block;
         }
     }
 }

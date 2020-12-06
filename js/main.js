@@ -30,3 +30,12 @@ window.addEventListener("load", () => {
         smartBackspace: false,
       });
 })
+
+// const menuButton = document.querySelector('button');
+// const navbar = document.getElementById('#boot-menu');
+
+// menuButton.addEventListener("click", () => {
+//     navbar.style.background = '#141E30';
+//     navbar.style.background = '-webkit-linear-gradient(to right, #243B55, #141E30)';
+//     navbar.style.background = 'linear-gradient(to right, #243B55, #141E30)';
+// })

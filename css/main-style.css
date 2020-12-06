@@ -8,7 +8,7 @@ body {
   background: #141E30;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #243B55, #141E30);
-  ackground: linear-gradient(to right, #243B55, #141E30);
+  background: linear-gradient(to right, #243B55, #141E30);
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   line-height: 1.2;
@@ -28,7 +28,7 @@ body {
   color: #f2f2f2;
   letter-spacing: 1px;
   transition: all 0.5s;
-  font-size: 15px;
+  font-size: 1.5rem;
 }
 
 .btn-outline-custom.active,
@@ -142,10 +142,13 @@ body {
 }
 @media screen and (max-width: 576px) {
   .container .name {
-    font-size: 3rem;
+    font-size: 4rem;
   }
   .container .desc {
-    font-size: 1.5rem;
+    font-size: 2rem;
+  }
+  .container .btn-outline-custom {
+    font-size: 1.4rem;
   }
 }
 
@@ -307,6 +310,39 @@ body {
 }
 #contact .contact-link:hover i {
   transform: rotate(360deg);
+}
+@media screen and (max-width: 768px) {
+  #contact h1 {
+    font-size: 4.5rem;
+  }
+  #contact .contact-link {
+    font-size: 2.25rem;
+    padding: 0;
+  }
+  #contact .linkz {
+    height: 15%;
+  }
+  #contact .spacer {
+    padding-top: 8%;
+  }
+}
+@media screen and (max-width: 576px) {
+  #contact h1 {
+    font-size: 3rem;
+  }
+  #contact .contact-link {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+  #contact .linkz {
+    height: 15%;
+  }
+  #contact .spacer {
+    padding-top: 8%;
+  }
+  #contact #social-btns {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=main-style.css.map */
