@@ -66,6 +66,21 @@ body {
   font-family: "Helvetica", sans-serif;
   font-size: 1.8rem;
 }
+#boot-menu #logo {
+  width: 10%;
+  height: 10%;
+  transition: transform 0.5s ease-out;
+}
+#boot-menu #logo .svg-blk {
+  fill: #000;
+}
+#boot-menu #logo:hover {
+  transform: scale(1.5);
+  cursor: none;
+}
+#boot-menu .navbar-brand:hover {
+  cursor: auto;
+}
 #boot-menu .navbar-nav a {
   position: relative;
   font-family: "Helvetica", sans-serif;
