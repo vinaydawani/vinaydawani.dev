@@ -214,6 +214,20 @@ body {
 #me {
   margin: 0;
   padding: 0;
+  color: #f2f2f2;
+}
+#me .row {
+  margin-right: 0;
+}
+#me h1 {
+  font-size: 6rem;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-weight: 200;
+}
+#me h1 span {
+  color: #a8000d;
+  font-weight: 600 !important;
 }
 #me img {
   filter: grayscale(100%);
@@ -221,10 +235,23 @@ body {
   width: auto;
 }
 #me p {
+  font-size: 2.1rem;
   text-align: left;
 }
 #me p span {
   color: #a8000d;
+}
+#me .skill-custom {
+  font-size: 1.6rem;
+  font-family: "Helvetica", sans-serif;
+}
+#me .skill-custom .progress {
+  height: 6px;
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+#me .skill-custom .progress-bar {
+  background: #a8000d;
 }
 @media screen and (max-width: 800px) {
   #me p {
