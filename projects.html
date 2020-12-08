@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@600&family=Montserrat&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;0,800;1,100&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/main-style.css" />
@@ -87,34 +87,82 @@
       </div>
     </nav>
 
-    <!-- <div id="tabular" class="container h-100">
-      <div class="row h-100">
-        <div class="col-md-12 my-auto">
-          <div class="table-responsive-sm">
-            <table class="table table-borderless">
-              <tbody>
-                <tr>
-                  <th scope="row">Game</th>
-                  <td>Rocket League</td>
-                </tr>
-                <tr>
-                  <th scope="row">Food</th>
-                  <td>Steak and Cheese sub</td>
-                </tr>
-                <tr>
-                  <th scope="row">Music Genre</th>
-                  <td>Alternative rock and Metal</td>
-                </tr>
-                <tr>
-                  <th scope="row">Movie</th>
-                  <td>Pirates of the Caribbean: The Curse of the Black Pearl</td>
-                </tr>
-              </tbody>
-            </table>
-            <p>*Not many favorites. Am flexible 🤙</p>
-          </div>
+    <div id="projects" class="container h-100 mb-2">
+      <div class="row spacer">
+        <div class="col-12 align-self-end">
+          <h1>Check out my <span>projects</span></h1>
         </div>
       </div>
-    </div> -->
+      <div id="project-slideshow" class="slide carousel mt-5" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#project-slideshow" data-slide-to="0" class="active"></li>
+          <li data-target="#project-slideshow" data-slide-to="1"></li>
+          <li data-target="#project-slideshow" data-slide-to="2"></li>
+          <li data-target="#project-slideshow" data-slide-to="3"></li>
+          <li data-target="#project-slideshow" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="https://github.com/vinaydawani/ISA-bot">
+              <img src="assets/img/isa_discord.png" class="d-block w-100" alt="..." />
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>ISAbot</h5>
+              <p>A discord bot for Indian Student Associations discord server. Made in python.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <a href="#">
+              <img src="assets/img/genome1.png" class="d-block w-100" alt="..." />
+            </a>
+            <div class="carousel-caption d-none d-md-block" style="color: black">
+              <h5>COVID-19 Genome Project</h5>
+              <p>A visualization of DNA of novel coronavirus 2019.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <a href="https://github.com/vinaydawani/moon-animation">
+              <img src="assets/img/phase.png" class="d-block w-100" alt="..." />
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Moon Phases</h5>
+              <p>
+                A small script that pulls images of moon from nasa and compiles them in a GIF. There are more than 8000
+                images which give you a fluid animation.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <a href="https://github.com/vinaydawani/What-is-Today">
+              <img src="assets/img/today.png" class="d-block w-100" alt="..." />
+            </a>
+            <div class="carousel-caption d-none d-md-block" style="color: black">
+              <h5>What is Today</h5>
+              <p>
+                Did you ever forget that it is world cookie day? Don't worry! This is a small MacOS app that sits in
+                your menu bar and tells you what event is it today.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <a href="https://trump.vinaydawani.dev/">
+              <img src="assets/img/trump.png" class="d-block w-100" alt="..." />
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>A journey of Trump's coronavirus response</h5>
+              <p>An illustration showing major decisions taken by Trump administration during the pandemic.</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#project-slideshow" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#project-slideshow" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
   </body>
 </html>

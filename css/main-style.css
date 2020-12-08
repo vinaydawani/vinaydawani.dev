@@ -129,7 +129,7 @@ body {
   }
 }
 
-#tabular p, #me p, .container .desc {
+#me p, .container .desc {
   font-size: 3rem;
   color: #f2f2f2;
   font-style: italic;
@@ -254,32 +254,46 @@ body {
   }
 }
 
-#tabular {
-  overflow-x: auto;
-  font-family: "Helvetica", sans-serif;
+.spacer {
+  padding-top: 5%;
+}
+
+.page_title {
+  ont-size: 6rem;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
   font-weight: 200;
 }
-#tabular table {
+.page_title span {
+  color: #a8000d;
+  font-weight: 600;
+}
+
+#projects {
   color: #f2f2f2;
-  font-size: 2rem;
 }
-#tabular table th,
-#tabular table td {
-  border-bottom: 0.5px solid #f2f2f2;
-  font-size: 1.5rem;
-}
-#tabular table td {
+#projects h1 {
+  font-size: 6rem;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
+  font-weight: 200;
 }
-#tabular p {
-  font-size: 1rem;
+#projects h1 span {
+  color: #a8000d;
+  font-weight: 600;
+}
+#projects .carousel-caption h5 {
+  font-family: "Helvetica", sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+#projects .carousel-caption p {
+  font-size: 1.2rem;
+  font-family: "DM Mono", monospace;
 }
 
 #contact {
   color: #f2f2f2;
-}
-#contact .spacer {
-  padding-top: 5%;
 }
 #contact h1 {
   font-size: 6rem;
