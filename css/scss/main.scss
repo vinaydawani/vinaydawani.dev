@@ -367,6 +367,36 @@ body {
         }
     }
 
+    @media screen and (max-width: 768px) {
+        h1 {
+            font-size: 4.5rem;
+        }
+
+        .spacer {
+            padding-top: 10%;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        h1 {
+            font-size: 3rem;
+        }
+
+        .spacer {
+            padding-top: 17%;
+        }
+    }
+
+    @media screen and (min-width: 2000px) {
+        h1 {
+            font-size: 7.2rem;
+        }
+
+        #project-slideshow {
+            margin-top: 10% !important;
+        }
+    }
+
     // .card {
     //     width: 100%;
     //     height: 75%;

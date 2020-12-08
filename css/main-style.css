@@ -291,6 +291,30 @@ body {
   font-size: 1.2rem;
   font-family: "DM Mono", monospace;
 }
+@media screen and (max-width: 768px) {
+  #projects h1 {
+    font-size: 4.5rem;
+  }
+  #projects .spacer {
+    padding-top: 10%;
+  }
+}
+@media screen and (max-width: 576px) {
+  #projects h1 {
+    font-size: 3rem;
+  }
+  #projects .spacer {
+    padding-top: 17%;
+  }
+}
+@media screen and (min-width: 2000px) {
+  #projects h1 {
+    font-size: 7.2rem;
+  }
+  #projects #project-slideshow {
+    margin-top: 10% !important;
+  }
+}
 
 #contact {
   color: #f2f2f2;
