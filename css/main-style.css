@@ -82,6 +82,7 @@ body {
   cursor: auto;
 }
 #boot-menu .navbar-nav a {
+  font-weight: 500;
   position: relative;
   font-family: "Helvetica", sans-serif;
   color: #f2f2f2;
@@ -112,6 +113,7 @@ body {
   width: 100%;
 }
 #boot-menu .navbar-nav .active {
+  font-weight: 500;
   background: linear-gradient(90deg, #00d4ff 0%, #c660bb 70%, #ff00dd 100%);
   background-size: 100%;
   background-repeat: repeat;

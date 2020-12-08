@@ -127,6 +127,7 @@ body {
 
     .navbar-nav {
         a {
+            font-weight: 500;
             position: relative;
             font-family: $helvetica;
             color: $white-text;
@@ -159,6 +160,7 @@ body {
         }
 
         .active {
+            font-weight: 500;
             background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(198,96,187,1) 70%, rgba(255,0,221,1) 100%);
             background-size: 100%;
             background-repeat: repeat;
