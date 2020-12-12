@@ -120,12 +120,23 @@ let topTracks = async (_token) => {
                   color: "rgba(0,0,0,0)",
                   zeroLineColor: "rgba(255, 255, 255, 0.5)",
                 },
+                scaleLabel: {
+                  display: true,
+                  labelString: "popularity",
+                },
               },
             ],
             scaleLabel: {
               fontColor: "rgba(255, 255, 2555, 0.5)",
-              fontFamily: '"Roboto Mono", monospace',
+              fontFamily: '"Roboto Mono", "monospace"',
             },
+          },
+          title: {
+            display: true,
+            text: "Popularity of your top tracks",
+            fontFamily: '"Montserrat", "sans-serif"',
+            fontSize: 14,
+            fontColor: "#rgba(255, 255, 255, 0.75)",
           },
         },
       });
@@ -203,6 +214,13 @@ let topTracks = async (_token) => {
               scaleLabel: {
                 fontColor: "rgba(255, 255, 2555, 0.5)",
               },
+            },
+            title: {
+              display: true,
+              text: "Properties of your top tracks",
+              fontFamily: '"Montserrat", "sans-serif"',
+              fontSize: 14,
+              fontColor: "#rgba(255, 255, 255, 0.75)",
             },
           },
         });
@@ -370,6 +388,10 @@ let savedTracks = async (_token) => {
                 ticks: {
                   fontColor: "rgba(255, 255, 255, 0.5)", // this here
                 },
+                scaleLabel: {
+                  display: true,
+                  labelString: "Valence",
+                },
               },
             ],
             yAxes: [
@@ -382,8 +404,91 @@ let savedTracks = async (_token) => {
                   color: "rgba(0,0,0,0)",
                   zeroLineColor: "rgba(255, 255, 255, 0.5)",
                 },
+                scaleLabel: {
+                  display: true,
+                  labelString: "Danceability/Energy",
+                },
               },
             ],
+          },
+          title: {
+            display: true,
+            text: "Comparision of Danceability and Energy with Valence",
+            fontFamily: '"Montserrat", "sans-serif"',
+            fontSize: 14,
+            fontColor: "#rgba(255, 255, 255, 0.75)",
+          },
+          tooltips: {
+            callbacks: {
+              label: function (tooltipItem, data) {
+                var label = data.labels[tooltipItem.index];
+                return label + ": (" + tooltipItem.xLabel + ", " + tooltipItem.yLabel + ")";
+              },
+            },
+          },
+        },
+      });
+
+      const savedScatterAc = document.getElementById("saved-tracks-scatter-ac").getContext("2d");
+      var savedScatterPlotAc = new Chart(savedScatterAc, {
+        type: "scatter",
+        data: {
+          labels: finalSavedTrackDataset.name,
+          datasets: [
+            {
+              label: "acousticness-energy",
+              data: scatterData(
+                finalSavedTrackDataset,
+                finalSavedTrackDataset.acousticness,
+                finalSavedTrackDataset.energy
+              ),
+              backgroundColor: "#F2223D",
+              pointHitRadius: 3,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            xAxes: [
+              {
+                type: "linear",
+                position: "bottom",
+                gridLines: {
+                  color: "rgba(0,0,0,0)",
+                  zeroLineColor: "rgba(255, 255, 255, 0.5)",
+                },
+                ticks: {
+                  fontColor: "rgba(255, 255, 255, 0.5)", // this here
+                },
+                scaleLabel: {
+                  display: true,
+                  labelString: "Acousticness",
+                },
+              },
+            ],
+            yAxes: [
+              {
+                ticks: {
+                  fontColor: "rgba(255, 255, 255, 0.5)",
+                  beginAtZero: true,
+                },
+                gridLines: {
+                  color: "rgba(0,0,0,0)",
+                  zeroLineColor: "rgba(255, 255, 255, 0.5)",
+                },
+                scaleLabel: {
+                  display: true,
+                  labelString: "Energy",
+                },
+              },
+            ],
+          },
+          title: {
+            display: true,
+            text: "Comparision of non-typical values like Acousticness and Energy",
+            fontFamily: '"Montserrat", "sans-serif"',
+            fontSize: 14,
+            fontColor: "#rgba(255, 255, 255, 0.75)",
           },
           tooltips: {
             callbacks: {

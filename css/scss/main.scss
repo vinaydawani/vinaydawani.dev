@@ -10,6 +10,7 @@ $roboto: "Roboto Mono", monospace;
 body {
   background-color: $spotify-black;
   font-size: 10px;
+  overflow-x: hidden !important;
 }
 
 %title-text {
@@ -86,7 +87,7 @@ body {
 
 #app-header {
   margin: 10px 0;
-  padding: 10px 0 10px 10px;
+  padding: 15px 0 15px 10px;
 
   .title-text {
     @extend %title-text;

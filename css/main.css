@@ -1,6 +1,7 @@
 body {
   background-color: #191414;
   font-size: 10px;
+  overflow-x: hidden !important;
 }
 
 #app-header .title-text, #spotify-auth-container #spotify-auth-content h1 {
@@ -61,7 +62,7 @@ body {
 
 #app-header {
   margin: 10px 0;
-  padding: 10px 0 10px 10px;
+  padding: 15px 0 15px 10px;
 }
 #app-header .title-text {
   letter-spacing: 0.3rem;

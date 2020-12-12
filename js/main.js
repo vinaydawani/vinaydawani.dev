@@ -22,7 +22,8 @@ loginButton.addEventListener("click", () => {
 
   // Replace with your app's client ID, redirect URI and desired scopes
   const clientId = "067e76992f964c878d60d3ab54f5ad58";
-  const redirectUri = "https://spotiviz.vinaydawani.dev/app.html";
+  const redirectUri = "http://localhost:5500/app.html";
+  // const redirectUri = "https://spotiviz.vinaydawani.dev/app.html";
   const scopes = ["user-read-email", "user-read-private", "user-library-read", "user-top-read"];
 
   // If there is no token, redirect to Spotify authorization
