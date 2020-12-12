@@ -1,0 +1,9 @@
+{
+  "python.pythonPath": "/Users/vinaydawani/.pyenv/versions/3.8.1/bin/python",
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  }
+}
