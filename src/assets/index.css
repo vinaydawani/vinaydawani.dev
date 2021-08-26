@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .custom-gradient {
+        background: #141E30;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #243B55, #141E30);
+        background: linear-gradient(to right, #243B55, #141E30);
+    }
+}
+
+@layer components {
+    .btn-transition {
+        transition: all 0.5s;
+    }
+    .btn-transition.active, 
+    .btn-transition:active, 
+    .btn-transition:hover {
+        @apply bg-off-white border-off-white text-off-black
+    }
+}
+
+body,
+html {
+  height: 100%
+}
