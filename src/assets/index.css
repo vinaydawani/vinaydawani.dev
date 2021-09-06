@@ -19,6 +19,13 @@
     .btn-transition:hover {
         @apply bg-off-white border-off-white text-off-black
     }
+
+    .portfolio-heading {
+        @apply text-off-white text-2xl font-mukta font-medium tracking-widest
+    }
+    .portfolio-subheading {
+        @apply text-off-white text-sm font-dm-mono font-light
+    }
 }
 
 body,
