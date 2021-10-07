@@ -21,10 +21,19 @@
     }
 
     .portfolio-heading {
-        @apply text-off-white text-2xl font-mukta font-medium tracking-widest
+        @apply text-2xl font-mukta font-medium tracking-widest
     }
     .portfolio-subheading {
-        @apply text-off-white text-sm font-dm-mono font-light
+        @apply text-sm font-dm-mono font-light
+    }
+    .portfolio-num {
+        @apply inline-block absolute right-full mr-8 top-1 text-off-white text-sm font-thin font-dm-mono group-hover:hidden
+    }
+    .portfolio-item {
+        @apply text-off-white hover:text-gray-500
+    }
+    .portfolio-item-animation {
+        @apply transition transform duration-300 hover:translate-x-6
     }
 }
 

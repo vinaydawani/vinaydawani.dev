@@ -11,16 +11,21 @@ module.exports = {
         "weird-red": "#a8000d",
         "off-white": "#e3e3e3",
         "off-black": "#333333",
+        "light-gray": "#adadad",
       },
       fontFamily: {
-        "montserrat": ["Montserrat", "sans-serif"],
-        "mukta": ["Mukta", "Helvetica", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+        mukta: ["Mukta", "Helvetica", "sans-serif"],
         "dm-mono": ["DM Mono", "monospace"],
       },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      transform: ["hover"],
+      translate: ["hover"],
+      display: ["hover", "group-hover"],
+    },
   },
   plugins: [],
 };
