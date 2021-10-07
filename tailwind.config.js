@@ -25,6 +25,7 @@ module.exports = {
       transform: ["hover"],
       translate: ["hover"],
       display: ["hover", "group-hover"],
+      outline: ["focus"],
     },
   },
   plugins: [],
