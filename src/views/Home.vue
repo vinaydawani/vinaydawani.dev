@@ -73,7 +73,7 @@ export default {
         maxParticles: 75,
         color: "#f2f2f2",
         connectParticles: true,
-        speed: 0.4,
+        speed: 0.3,
         minDistance: 120,
         // responsive: [
         //   {
