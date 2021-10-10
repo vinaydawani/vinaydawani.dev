@@ -2,7 +2,7 @@
   <div id="about" class="mt-4">
     <section class="flex flex-row scroll-container">
       <div class="w-2/5 image-container">
-        <img src="../assets/img/IMG_7496.jpg" alt="" class="h-max" />
+        <img src="../assets/img/IMG_7496.jpg" alt="" class="h-auto" />
       </div>
       <div class="w-3/5 content-container ml-8 px-4">
         <div
@@ -80,7 +80,7 @@
                     </div>
                   </div>
                   <div class="progress-outer">
-                    <div style="width: 30%" class="progress-inner"></div>
+                    <div style="width: 70%" class="progress-inner"></div>
                   </div>
                 </div>
               </div>
@@ -168,7 +168,12 @@
         </div>
       </div>
     </section>
-    <section class="flex flex-row github-container h-screen"></section>
+    <section class="flex flex-row github-container">
+      <div class="github-events-timeline w-1/2">
+        <githubEvents></githubEvents>
+      </div>
+      <div class="w-1/2"></div>
+    </section>
   </div>
 </template>
 
@@ -176,25 +181,83 @@
 // import * as PIXI from "pixi.js";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import githubEvents from "@/components/githubEvents.vue";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: "about-me",
+  components: {
+    githubEvents,
+  },
   methods: {
     imageScroll() {
-      const ST = ScrollTrigger.create({
+      ScrollTrigger.create({
         trigger: ".scroll-container",
         start: "top top",
         end: "bottom bottom",
         pin: ".image-container",
-        markers: "true",
+        // markers: "true",
       });
-      ST.enable();
+    },
+    progressBarScroll() {
+      const bars = document.querySelectorAll(".progress-bar");
+      bars.forEach((bar) => {
+        // const anim = gsap.fromTo(
+        //   bar,
+        //   { autoAlpha: 0, y: 50 },
+        //   { duration: 1, autoAlpha: 1, y: 0 }
+        // );
+        // ScrollTrigger.create({
+        //   trigger: ".progress-bar",
+        //   animation: anim,
+        //   toggleActions: "play complete none reset",
+        //   markers: "true",
+        // });
+        gsap.fromTo(
+          bar,
+          {
+            autoAlpha: 0,
+            y: 50,
+          },
+          {
+            scrollTrigger: {
+              trigger: ".progress-bar",
+              toggleActions: "play complete none reset",
+              // markers: "true",
+            },
+            duration: 1,
+            autoAlpha: 1,
+            y: 0,
+          }
+        );
+      });
+    },
+    progressBarFill() {
+      const fills = document.querySelectorAll(".progress-inner");
+      fills.forEach((fill) => {
+        gsap.fromTo(
+          fill,
+          {
+            width: 0,
+          },
+          {
+            scrollTrigger: {
+              trigger: ".progress-bar",
+              toggleActions: "play complete none reset",
+              markers: "true",
+            },
+            duration: 2,
+            width: fill.style.width,
+          }
+        );
+      });
     },
   },
   mounted() {
     this.imageScroll();
+    this.progressBarScroll();
+    this.progressBarFill();
   },
 };
 </script>
@@ -215,4 +278,7 @@ export default {
 .progress-inner {
   @apply shadow-none flex flex-col text-center whitespace-nowrap text-off-white justify-center bg-weird-red;
 }
+/* .progress-bar {
+  visibility: hidden;
+} */
 </style>
