@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.22.0",
     "gsap": "^3.7.1",
     "particlesjs": "^2.2.3",
     "pixi.js": "^6.1.2",
