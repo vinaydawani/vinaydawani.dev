@@ -2,7 +2,8 @@
   <div id="about" class="mt-4">
     <section class="flex flex-row scroll-container">
       <div class="w-2/5 image-container">
-        <img src="../assets/img/IMG_7496.jpg" alt="" class="h-auto" />
+        <!-- <img src="../assets/img/IMG_7496.jpg" alt="" class="h-auto" /> -->
+        <div class="h-auto fake3d"></div>
       </div>
       <div class="w-3/5 content-container ml-2 pl-8 pr-4">
         <div
@@ -178,7 +179,7 @@
 </template>
 
 <script>
-// import * as PIXI from "pixi.js";
+import * as PIXI from "pixi.js";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import githubEvents from "@/components/githubEvents.vue";
@@ -267,11 +268,121 @@ export default {
     //   // make the right edge "stick" to the scroll bar. force3D: true improves performance
     //   gsap.set(".skewElem", { transformOrigin: "right center", force3D: true });
     // },
+    // image3d() {
+    //   const imageContainer = document.querySelector(".scroll-container");
+    //   const fake3d = document.querySelector(".fake3d");
+
+    //   // const vThresh = 75;
+    //   // const hThresh = 150;
+
+    //   const originalImage = require("../assets/img/IMG_7496 copy.jpg");
+
+    //   const canvasWidth = 800;
+    //   const canvasHeight = 1020;
+
+    //   const app = new PIXI.Application({
+    //     width: canvasWidth,
+    //     height: canvasHeight,
+    //     backgroundAlpha: 0,
+    //     // resolution: window.devicePixelRatio,
+    //     // resizeTo: originalImage,
+    //   });
+
+    //   fake3d.appendChild(app.view);
+
+    //   const image = new PIXI.Sprite.from(originalImage);
+
+    //   image.width = canvasWidth;
+    //   image.height = canvasHeight;
+    //   // image.anchor.set(0.5);
+    //   // image.position.x = canvasWidth / 2;
+    //   // image.position.y = canvasHeight / 2;
+
+    //   app.stage.addChild(image);
+
+    //   const depthMapFile = require("../assets/img/depth_map.png");
+    //   const depthMap = new PIXI.Sprite.from(depthMapFile);
+    //   const depthMapFilter = new PIXI.filters.DisplacementFilter(depthMap);
+
+    //   app.stage.addChild(depthMap);
+    //   app.stage.filters = [depthMapFilter];
+
+    //   depthMap.width = canvasWidth;
+    //   depthMap.height = canvasHeight;
+    //   // depthMap.anchor.set(0.5);
+    //   // depthMap.position.y = canvasHeight / 2;
+    //   // depthMap.position.x = canvasWidth / 2;
+    //   depthMapFilter.scale.x = 2;
+    //   depthMapFilter.scale.y = 2;
+
+    //   imageContainer.addEventListener("mousemove", (e) => {
+    //     // let yAmount = (e.clientY / window.innerHeight - 0.5) * vThresh;
+    //     // let xAmount = (e.clientX / window.innerWidth - 0.5) * hThresh;
+    //     let yAmount = (canvasHeight / 2 - e.clientY) / 20;
+    //     let xAmount = (canvasWidth / 2 - e.clientX) / 20;
+
+    //     gsap.to(depthMapFilter.scale, {
+    //       duration: 2,
+    //       y: yAmount,
+    //       x: xAmount,
+    //       ease: "power3.out",
+    //     });
+    //   });
+    // },
+    image3d() {
+      const imageContainer = document.querySelector(".image-container");
+      const fake3d = document.querySelector(".fake3d");
+
+      const canvasWidth = 672;
+      const canvasHeight = 856;
+
+      const app = new PIXI.Application({
+        width: canvasWidth,
+        height: canvasHeight,
+        backgroundAlpha: 0,
+      });
+      fake3d.appendChild(app.view);
+
+      let img = new PIXI.Sprite.from(
+        require("../assets/img/IMG_7496 copy.jpg")
+      );
+      img.width = canvasWidth;
+      img.height = canvasHeight;
+      img.anchor.set(0.5);
+      img.position.x = canvasWidth / 2;
+      img.position.y = canvasHeight / 2;
+      app.stage.addChild(img);
+
+      const depthMap = new PIXI.Sprite.from("../assets/img/depth_map.png");
+      depthMap.width = canvasWidth;
+      depthMap.height = canvasHeight;
+      depthMap.anchor.set(0.5);
+      depthMap.position.y = canvasHeight / 2;
+      depthMap.position.x = canvasWidth / 2;
+      app.stage.addChild(depthMap);
+
+      const depthFilter = new PIXI.filters.DisplacementFilter(depthMap);
+      depthFilter.scale.x = 2;
+      depthFilter.scale.y = 2;
+      app.stage.filters = [depthFilter];
+
+      imageContainer.addEventListener("mousemove", (e) => {
+        const amountX = (canvasWidth / 2 - e.clientX) / 20;
+        const amountY = (canvasHeight / 2 - e.clientY) / 20;
+        gsap.to(depthFilter.scale, {
+          duration: 2,
+          x: amountX,
+          y: amountY,
+          ease: "power3.out",
+        });
+      });
+    },
   },
   mounted() {
     this.imageScroll();
     this.progressBarScroll();
     this.progressBarFill();
+    this.image3d();
     // this.textSkew();
   },
 };
