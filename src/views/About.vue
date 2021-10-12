@@ -169,11 +169,44 @@
         </div>
       </div>
     </section>
-    <section class="flex flex-row github-container h-screen">
-      <div class="github-events-timeline w-1/2">
+    <section class="flex flex-row charts-container mt-12">
+      <div class="github-events-timeline w-1/2 flex flex-col pl-20 pr-8">
+        <div
+          class="
+            pt-6
+            text-3xl
+            tracking-widest
+            text-off-white
+            font-montserrat font-semibold
+          "
+        >
+          What I've been up to
+        </div>
         <githubEvents></githubEvents>
       </div>
-      <div class="w-1/2"></div>
+      <div
+        class="
+          lang-7-day-chart
+          w-1/2
+          flex flex-col
+          justify-items-center
+          pr-20
+          pl-8
+        "
+      >
+        <div
+          class="
+            pt-6
+            text-3xl
+            tracking-widest
+            text-off-white
+            font-montserrat font-semibold
+          "
+        >
+          What I've been using
+        </div>
+        <langStats></langStats>
+      </div>
     </section>
   </div>
 </template>
@@ -183,6 +216,7 @@ import * as PIXI from "pixi.js";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import githubEvents from "@/components/githubEvents.vue";
+import langStats from "@/components/langStats.vue";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -190,6 +224,7 @@ export default {
   name: "about-me",
   components: {
     githubEvents,
+    langStats,
   },
   methods: {
     imageScroll() {
@@ -234,7 +269,7 @@ export default {
           {
             scrollTrigger: {
               trigger: ".progress-bar",
-              toggleActions: "play complete none reset",
+              toggleActions: "play none none reset",
               // markers: "true",
             },
             duration: 2.5,
@@ -353,13 +388,15 @@ export default {
       img.position.y = canvasHeight / 2;
       app.stage.addChild(img);
 
-      const depthMap = new PIXI.Sprite.from("../assets/img/depth_map.png");
+      const depthMap = new PIXI.Sprite.from(
+        require("../assets/img/depth_map.png")
+      );
       depthMap.width = canvasWidth;
       depthMap.height = canvasHeight;
-      depthMap.anchor.set(0.5);
+      // depthMap.anchor.set(0.5);
       depthMap.position.y = canvasHeight / 2;
       depthMap.position.x = canvasWidth / 2;
-      app.stage.addChild(depthMap);
+      // app.stage.addChild(depthMap);
 
       const depthFilter = new PIXI.filters.DisplacementFilter(depthMap);
       depthFilter.scale.x = 2;
