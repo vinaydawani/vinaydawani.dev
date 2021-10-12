@@ -1,19 +1,39 @@
 <template>
-  <div class="flex flex-col pl-20 pt-12 gap-y-8">
+  <div class="flex flex-col gap-y-3 mt-8">
     <div
       v-for="event in events"
       v-bind:key="event.date"
       class="flex flex-row gap-x-4"
     >
-      <div>
-        <ion-icon
-          :name="event.icon"
-          class="pt-1 text-xl text-off-white"
-        ></ion-icon>
+      <div class="flex flex-col place-items-center justify-center">
+        <div
+          class="
+            flex
+            place-items-center
+            justify-center
+            rounded-full
+            bg-off-white
+            w-6
+            h-6
+            shadow-c
+            opacity-95
+            relative
+          "
+        >
+          <ion-icon
+            :name="event.icon"
+            class="w-4 h-4 text-weird-red z-10 opacity-95"
+          ></ion-icon>
+        </div>
+        <div class="w-1 rounded-full h-12 bg-off-white mt-2"></div>
       </div>
       <div class="text-off-white font-mono">
-        <div>{{ event.date }}</div>
-        <div>{{ event.message }}</div>
+        <div class="rounded inline-block bg-weird-red bg-opacity-40">
+          <p class="text-off-white px-2 py-px">
+            {{ event.date }}
+          </p>
+        </div>
+        <div class="text-sm tracking-wide px-px pt-2">{{ event.message }}</div>
       </div>
     </div>
   </div>
@@ -38,17 +58,17 @@ export default {
     const eventTypes = [
       {
         trigger: "WatchEvent",
-        icon: "star",
+        icon: "star-outline",
         getMessage: (e) => `starred ${e.repo.name}`,
       },
       {
         trigger: "PushEvent",
-        icon: "document",
+        icon: "git-commit",
         getMessage: (e) => `pushed ${e.payload.size} updates to ${e.repo.name}`,
       },
       {
         trigger: "IssuesEvent",
-        icon: "information-circle",
+        icon: "information",
         getMessage: (e) => `contributed to an issue on ${e.repo.name}`,
       },
     ];
@@ -84,3 +104,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.shadow-c {
+  box-shadow: 0 0 2px 2px #f2f2f2;
+}
+</style>
