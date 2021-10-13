@@ -25,7 +25,7 @@ export default {
         // TODO: remove the api key
         const res = await axios.get(url, {
           crossdomain: true,
-          // Authorization: "Basic " + window.btoa(process.env.WAKATIME_KEY),
+          Authorization: "Basic " + window.btoa(process.env.WAKATIME_KEY),
         });
         res.data.data.languages.forEach((element) => {
           dataset.labels.push(element.name);
