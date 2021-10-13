@@ -1,5 +1,5 @@
 <template>
-  <div id="about" class="mt-4">
+  <div id="about" class="mt-4 h-full">
     <section class="flex flex-row scroll-container">
       <div class="w-2/5 image-container">
         <!-- <img src="../assets/img/IMG_7496.jpg" alt="" class="h-auto" /> -->
@@ -169,7 +169,7 @@
         </div>
       </div>
     </section>
-    <section class="flex flex-row charts-container mt-12">
+    <section class="flex flex-row charts-container mt-12 h-5/6">
       <div class="github-events-timeline w-1/2 flex flex-col pl-20 pr-8">
         <div
           class="
@@ -190,6 +190,7 @@
           w-1/2
           flex flex-col
           justify-items-center
+          place-items-center
           pr-20
           pl-8
         "
@@ -278,6 +279,7 @@ export default {
         );
       });
     },
+    // HACK: skew elem on scroll
     // textSkew() {
     //   let proxy = { skew: 0 },
     //     skewSetter = gsap.quickSetter(".about-text", "skewY", "deg"), // fast
@@ -302,67 +304,6 @@ export default {
 
     //   // make the right edge "stick" to the scroll bar. force3D: true improves performance
     //   gsap.set(".skewElem", { transformOrigin: "right center", force3D: true });
-    // },
-    // image3d() {
-    //   const imageContainer = document.querySelector(".scroll-container");
-    //   const fake3d = document.querySelector(".fake3d");
-
-    //   // const vThresh = 75;
-    //   // const hThresh = 150;
-
-    //   const originalImage = require("../assets/img/IMG_7496 copy.jpg");
-
-    //   const canvasWidth = 800;
-    //   const canvasHeight = 1020;
-
-    //   const app = new PIXI.Application({
-    //     width: canvasWidth,
-    //     height: canvasHeight,
-    //     backgroundAlpha: 0,
-    //     // resolution: window.devicePixelRatio,
-    //     // resizeTo: originalImage,
-    //   });
-
-    //   fake3d.appendChild(app.view);
-
-    //   const image = new PIXI.Sprite.from(originalImage);
-
-    //   image.width = canvasWidth;
-    //   image.height = canvasHeight;
-    //   // image.anchor.set(0.5);
-    //   // image.position.x = canvasWidth / 2;
-    //   // image.position.y = canvasHeight / 2;
-
-    //   app.stage.addChild(image);
-
-    //   const depthMapFile = require("../assets/img/depth_map.png");
-    //   const depthMap = new PIXI.Sprite.from(depthMapFile);
-    //   const depthMapFilter = new PIXI.filters.DisplacementFilter(depthMap);
-
-    //   app.stage.addChild(depthMap);
-    //   app.stage.filters = [depthMapFilter];
-
-    //   depthMap.width = canvasWidth;
-    //   depthMap.height = canvasHeight;
-    //   // depthMap.anchor.set(0.5);
-    //   // depthMap.position.y = canvasHeight / 2;
-    //   // depthMap.position.x = canvasWidth / 2;
-    //   depthMapFilter.scale.x = 2;
-    //   depthMapFilter.scale.y = 2;
-
-    //   imageContainer.addEventListener("mousemove", (e) => {
-    //     // let yAmount = (e.clientY / window.innerHeight - 0.5) * vThresh;
-    //     // let xAmount = (e.clientX / window.innerWidth - 0.5) * hThresh;
-    //     let yAmount = (canvasHeight / 2 - e.clientY) / 20;
-    //     let xAmount = (canvasWidth / 2 - e.clientX) / 20;
-
-    //     gsap.to(depthMapFilter.scale, {
-    //       duration: 2,
-    //       y: yAmount,
-    //       x: xAmount,
-    //       ease: "power3.out",
-    //     });
-    //   });
     // },
     image3d() {
       const imageContainer = document.querySelector(".image-container");
@@ -414,12 +355,27 @@ export default {
         });
       });
     },
+    scrollCont() {
+      const cont = document.querySelector(".charts-container");
+      gsap.to(cont, {
+        // translateY: "30%",
+        height: "95%",
+        scrollTrigger: {
+          trigger: ".scroll-container",
+          end: "bottom-=200 bottom",
+          start: "top+=200 top",
+          // markers: "true",
+          scrub: true,
+        },
+      });
+    },
   },
   mounted() {
     this.imageScroll();
     this.progressBarScroll();
     this.progressBarFill();
     this.image3d();
+    this.scrollCont();
     // this.textSkew();
   },
 };

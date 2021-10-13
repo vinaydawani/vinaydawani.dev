@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-col gap-y-3 mt-8">
+  <div class="flex flex-col gap-y-4 mt-10">
     <div
       v-for="event in events"
       v-bind:key="event.date"
-      class="flex flex-row gap-x-4"
+      class="event-anim flex flex-row gap-x-"
     >
       <div class="flex flex-col place-items-center justify-center">
         <div
@@ -25,7 +25,7 @@
             class="w-4 h-4 text-weird-red z-10 opacity-95"
           ></ion-icon>
         </div>
-        <div class="w-1 rounded-full h-12 bg-off-white mt-2"></div>
+        <div class="w-0.5 rounded-full h-10 bg-off-white mt-2"></div>
       </div>
       <div class="text-off-white font-mono">
         <div class="rounded inline-block bg-weird-red bg-opacity-40">
@@ -33,7 +33,9 @@
             {{ event.date }}
           </p>
         </div>
-        <div class="text-sm tracking-wide px-px pt-2">{{ event.message }}</div>
+        <div class="text-sm tracking-wide px-px pt-2">
+          {{ event.message }}
+        </div>
       </div>
     </div>
   </div>
@@ -43,6 +45,8 @@
 import axios from "axios";
 import { format } from "date-fns";
 import { ref } from "@vue/reactivity";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default {
   name: "githubEvents",
@@ -101,6 +105,18 @@ export default {
     getPost();
 
     return { events };
+  },
+  methods: {
+    // gitAnim() {
+    //   const events = document.querySelectorAll(".event-anim");
+    //   console.log(events);
+    //   events.forEach((event) => {
+    //     console.log(event);
+    //   });
+    // },
+  },
+  mounted() {
+    // this.gitAnim();
   },
 };
 </script>
