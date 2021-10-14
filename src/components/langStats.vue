@@ -13,7 +13,7 @@ export default {
   name: "langStats",
   setup() {
     const url =
-      "https://cors-anywhere.herokuapp.com/https://wakatime.com/api/v1/users/@External72/stats/last_7_days";
+      "https://wakatime.com/api/v1/users/@External72/stats/last_7_days";
     let dataset = {
       labels: [],
       data: [],
