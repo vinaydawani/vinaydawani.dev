@@ -12,8 +12,7 @@ import Chart from "chart.js/auto";
 export default {
   name: "langStats",
   setup() {
-    const url =
-      "https://cors-anywhere.herokuapp.com/https://wakatime.com/api/v1/users/@External72/stats/last_7_days";
+    const url = "https://wakatime-cors-proxy.herokuapp.com/stats/7d";
     let dataset = {
       labels: [],
       data: [],
@@ -22,11 +21,8 @@ export default {
 
     async function getData() {
       try {
-        // TODO: remove the api key
-        const res = await axios.get(url, {
-          crossdomain: true,
-          Authorization: "Basic " + window.btoa(process.env.WAKATIME_KEY),
-        });
+        const res = await axios.get(url);
+        console.log(res);
         res.data.data.languages.forEach((element) => {
           dataset.labels.push(element.name);
           dataset.data.push(element.percent);
