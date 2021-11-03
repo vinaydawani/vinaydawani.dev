@@ -7,6 +7,7 @@
 <script>
 // import { ref } from "@vue/reactivity";
 import axios from "axios";
+import { onMounted } from "@vue/runtime-core";
 import Chart from "chart.js/auto";
 
 export default {
@@ -20,19 +21,29 @@ export default {
     };
 
     async function getData() {
-      try {
-        const res = await axios.get(url);
-        console.log(res);
-        res.data.data.languages.forEach((element) => {
-          dataset.labels.push(element.name);
-          dataset.data.push(element.percent);
+      await axios
+        .get(url)
+        .then((res) => {
+          return res.data.data.languages;
+        })
+        .then((lang) => {
+          lang.forEach((element) => {
+            dataset.labels.push(element.name);
+            dataset.data.push(element.percent);
+          });
+          return dataset;
+        })
+        .then(() => {
+          setColor();
+        })
+        .then(() => {
+          onMounted(drawChart());
+        })
+        .catch((err) => {
+          console.error(err);
+          getData();
         });
-      } catch (e) {
-        console.error("Error fetching data from Wakatime.", e);
-      }
     }
-
-    getData();
 
     function hslToHex(h, s, l) {
       l /= 100;
@@ -55,25 +66,17 @@ export default {
         dataset.backgroundColor.push(x2);
       }
     }
-
-    setColor();
-
-    return {
-      dataset,
-    };
-  },
-  methods: {
-    drawChart() {
+    function drawChart() {
       let ctx = document.getElementById("wakatime-chart").getContext("2d");
       const config = {
         type: "doughnut",
         data: {
-          labels: this.dataset.labels,
+          labels: dataset.labels,
           datasets: [
             {
               label: "Language used in last 7 days",
-              data: this.dataset.data,
-              backgroundColor: this.dataset.backgroundColor,
+              data: dataset.data,
+              backgroundColor: dataset.backgroundColor,
               // borderColor: ["#fff"],
               cutout: "60%",
               radius: "90%",
@@ -94,15 +97,10 @@ export default {
           },
         },
       };
-      const xxx = new Chart(ctx, config);
-      xxx.update();
-    },
-  },
-  mounted() {
-    this.drawChart();
-    setTimeout(() => {
-      window.dispatchEvent(new Event("resize"));
-    }, 1000);
+      new Chart(ctx, config);
+    }
+
+    getData();
   },
 };
 </script>
