@@ -74,14 +74,14 @@
                 <div class="progress-bar relative pt-1">
                   <div class="flex mb-1 items-center justify-between">
                     <div>
-                      <span class="progress-label"> Task in progress </span>
+                      <span class="progress-label"> Python </span>
                     </div>
                     <div class="text-right">
-                      <span class="progress-percent"> 30% </span>
+                      <span class="progress-percent"> 87% </span>
                     </div>
                   </div>
                   <div class="progress-outer">
-                    <div style="width: 70%" class="progress-inner"></div>
+                    <div style="width: 87%" class="progress-inner"></div>
                   </div>
                 </div>
               </div>
@@ -89,46 +89,16 @@
                 <div class="progress-bar relative pt-1">
                   <div class="flex mb-1 items-center justify-between">
                     <div>
-                      <span class="progress-label"> Task in progress </span>
+                      <span class="progress-label">
+                        JavaScript/TypeScript
+                      </span>
                     </div>
                     <div class="text-right">
-                      <span class="progress-percent"> 30% </span>
+                      <span class="progress-percent"> 82% </span>
                     </div>
                   </div>
                   <div class="progress-outer">
-                    <div style="width: 30%" class="progress-inner"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="flex flex-row w-full">
-              <div class="w-1/2 px-4">
-                <div class="progress-bar relative pt-1">
-                  <div class="flex mb-1 items-center justify-between">
-                    <div>
-                      <span class="progress-label"> Task in progress </span>
-                    </div>
-                    <div class="text-right">
-                      <span class="progress-percent"> 30% </span>
-                    </div>
-                  </div>
-                  <div class="progress-outer">
-                    <div style="width: 30%" class="progress-inner"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="w-1/2 px-4">
-                <div class="progress-bar relative pt-1">
-                  <div class="flex mb-1 items-center justify-between">
-                    <div>
-                      <span class="progress-label"> Task in progress </span>
-                    </div>
-                    <div class="text-right">
-                      <span class="progress-percent"> 30% </span>
-                    </div>
-                  </div>
-                  <div class="progress-outer">
-                    <div style="width: 30%" class="progress-inner"></div>
+                    <div style="width: 82%" class="progress-inner"></div>
                   </div>
                 </div>
               </div>
@@ -138,14 +108,14 @@
                 <div class="progress-bar relative pt-1">
                   <div class="flex mb-1 items-center justify-between">
                     <div>
-                      <span class="progress-label"> Task in progress </span>
+                      <span class="progress-label"> Vue 3, Vuex </span>
                     </div>
                     <div class="text-right">
-                      <span class="progress-percent"> 30% </span>
+                      <span class="progress-percent"> 74% </span>
                     </div>
                   </div>
                   <div class="progress-outer">
-                    <div style="width: 30%" class="progress-inner"></div>
+                    <div style="width: 74%" class="progress-inner"></div>
                   </div>
                 </div>
               </div>
@@ -153,14 +123,48 @@
                 <div class="progress-bar relative pt-1">
                   <div class="flex mb-1 items-center justify-between">
                     <div>
-                      <span class="progress-label"> Task in progress </span>
+                      <span class="progress-label"> Relational Databases </span>
                     </div>
                     <div class="text-right">
-                      <span class="progress-percent"> 30% </span>
+                      <span class="progress-percent"> 85% </span>
                     </div>
                   </div>
                   <div class="progress-outer">
-                    <div style="width: 30%" class="progress-inner"></div>
+                    <div style="width: 85%" class="progress-inner"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-row w-full">
+              <div class="w-1/2 px-4">
+                <div class="progress-bar relative pt-1">
+                  <div class="flex mb-1 items-center justify-between">
+                    <div>
+                      <span class="progress-label">
+                        Photoshop/Illustrator
+                      </span>
+                    </div>
+                    <div class="text-right">
+                      <span class="progress-percent"> 78% </span>
+                    </div>
+                  </div>
+                  <div class="progress-outer">
+                    <div style="width: 78%" class="progress-inner"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-1/2 px-4">
+                <div class="progress-bar relative pt-1">
+                  <div class="flex mb-1 items-center justify-between">
+                    <div>
+                      <span class="progress-label"> ArcGIS/QGIS </span>
+                    </div>
+                    <div class="text-right">
+                      <span class="progress-percent"> 93% </span>
+                    </div>
+                  </div>
+                  <div class="progress-outer">
+                    <div style="width: 93%" class="progress-inner"></div>
                   </div>
                 </div>
               </div>
